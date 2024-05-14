@@ -1,7 +1,43 @@
+/* this is a revised code with the help of @mbtenkorang on front end mentor, thanks :) */
+
+/* reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin-block: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* font */
+
 @font-face {
   font-family: Inter;
   src: url(assets/fonts/Inter-VariableFont_slnt\,wght.ttf);
 }
+
+/* centering the div */
+
+body {
+  display: grid;
+  place-items: center center;
+}
+
+/* adding some margins to balance everything out */
 
 p {
   margin-top: 2rem;
@@ -11,29 +47,26 @@ h1 {
   margin: 1rem;
 }
 
+/* basic setup for the background */
+
 html {
   background-color: hsl(0, 0%, 8%);
-  color: white;
   font-family: Inter;
 }
 
-.container {
-  position: relative;
-}
+/* setup for the main content */
 
 .child {
+  color: white;
   background-color: hsl(0, 0%, 12%);
-  width: 384px;
+  width: 100%;
   display: grid;
   justify-items: center;
   padding: 2rem;
   border-radius: 0.5rem;
-
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
+
+/* adding style to the links */
 
 .links {
   display: grid;
@@ -42,8 +75,7 @@ html {
 }
 
 .links a {
-  display: grid;
-  justify-content: center;
+  text-align: center;
 
   font-weight: 600;
   text-decoration: none;
@@ -60,14 +92,6 @@ html {
   transition: all 0.3s ease-in-out;
 }
 
-strong {
-  color: hsl(75, 94%, 57%);
-}
-
-img {
-  border-radius: 100%;
-}
-
 .attribution a {
   color: hsl(75, 94%, 57%);
 }
@@ -75,4 +99,25 @@ img {
 .attribution a:hover {
   color: grey;
   transition: all 0.3s ease-in-out;
+}
+
+/* some words had a lime color applied to them */
+
+strong {
+  color: hsl(75, 94%, 57%);
+}
+
+/* image set up */
+
+img {
+  width: 30%;
+  border-radius: 100%;
+}
+
+/* using px for desktop using media query */
+
+@media screen and (min-width: 650px) {
+  .child {
+    width: 384px;
+  }
 }
